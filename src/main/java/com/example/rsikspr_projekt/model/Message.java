@@ -2,7 +2,6 @@ package com.example.rsikspr_projekt.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Data;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.ToString;
@@ -28,11 +27,13 @@ public class Message {
     @Schema(description = "When was the message recived", accessMode = Schema.AccessMode.READ_ONLY)
     private LocalDateTime recivedAt;
 
-    Message(){
+    public Message() {
     }
 
-    Message(String content, LocalDateTime recivedAt) {
+    public Message(String content, LocalDateTime recivedAt) {
         this.content = content;
         this.recivedAt = recivedAt;
     }
+
+
 }
