@@ -19,7 +19,7 @@ public class HealthController {
     @Autowired(required = false)
     private DataSource dataSource;
 
-    @GetMapping
+    @GetMapping("/health")
     public Map<String, Object> checkHealth() {
         Map<String, Object> response = new HashMap<>();
         boolean healthy = true;
