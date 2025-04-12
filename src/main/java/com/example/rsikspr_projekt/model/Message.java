@@ -35,5 +35,4 @@ public class Message {
         this.receivedAt = receivedAt;
     }
 
-
 }
