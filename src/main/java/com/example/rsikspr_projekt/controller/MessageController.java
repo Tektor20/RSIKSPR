@@ -34,7 +34,6 @@ public class MessageController {
         this.messageRepository = messageRepository;
     }
 
-
     @PostMapping("/send")
     @Operation(summary = "receive and save message",
             description = "receives JSON object with the message," +
