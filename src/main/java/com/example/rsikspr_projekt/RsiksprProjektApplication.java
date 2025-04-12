@@ -10,6 +10,7 @@ public class RsiksprProjektApplication {
 
         SpringApplication.run(RsiksprProjektApplication.class, args);
         System.out.println("Hello World!");
+        System.out.println();
     }
 
 }
