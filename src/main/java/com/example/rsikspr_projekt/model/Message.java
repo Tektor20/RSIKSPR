@@ -25,14 +25,14 @@ public class Message {
 
     @Column(nullable = false, updatable = false)
     @Schema(description = "When was the message recived", accessMode = Schema.AccessMode.READ_ONLY)
-    private LocalDateTime recivedAt;
+    private LocalDateTime receivedAt;
 
     public Message() {
     }
 
-    public Message(String content, LocalDateTime recivedAt) {
+    public Message(String content, LocalDateTime receivedAt) {
         this.content = content;
-        this.recivedAt = recivedAt;
+        this.receivedAt = receivedAt;
     }
 
 

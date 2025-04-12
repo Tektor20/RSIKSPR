@@ -7,10 +7,16 @@ import lombok.Getter;
 import lombok.Setter;
 
 @Schema(description = "Payload for sending new messages")
+@Getter @Setter
 public class MessageRequest {
+
+    public MessageRequest() {}
+
+    public MessageRequest(String message) {
+        this.message = message;
+    }
 
     @NotBlank(message = "Message content cannot be blank")
     @Size(max = 500, message = "Message content cannot exceed 500 characters")
-    @Getter @Setter
     private String message;
 }
