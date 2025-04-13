@@ -41,7 +41,7 @@ public class MessageControllerIntegrationTest {
         String testContent = "This is a test message " + System.currentTimeMillis();
         requestDTO.setMessage(testContent);
 
-        mockMvc.perform(post("v1/send")
+        mockMvc.perform(post("/v1/send")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDTO)))
                 .andExpect(status().isCreated())
@@ -65,7 +65,7 @@ public class MessageControllerIntegrationTest {
         MessageRequest requestDTO = new MessageRequest();
         requestDTO.setMessage("");
 
-        mockMvc.perform(post("v1/send")
+        mockMvc.perform(post("/v1/send")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDTO)))
                 .andExpect(status().isBadRequest());
@@ -80,7 +80,7 @@ public class MessageControllerIntegrationTest {
         MessageRequest requestDTO = new MessageRequest();
         requestDTO.setMessage(null);
 
-        mockMvc.perform(post("v1/send")
+        mockMvc.perform(post("/v1/send")
                 .contentType(MediaType.APPLICATION_JSON)
                 .content(objectMapper.writeValueAsString(requestDTO)))
                 .andExpect(status().isBadRequest());
