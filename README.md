@@ -1,4 +1,4 @@
-# RSIKSPR Projekt - Message API
+# RSIKSPR Project - Message API
 
 ## Opis
 
