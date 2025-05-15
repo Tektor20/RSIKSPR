@@ -1,0 +1,40 @@
+services:
+  #databse service
+  db:
+    image: postgres:latest
+    container_name: rsikspr-postgres-db
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: 07072004mb
+      POSTGRES_DB: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    networks:
+      - app-network
+  #springboot app service
+  app:
+    container_name: rsikspr-springboot-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      #these variables will override those from app properties
+      SPRING_DATASOURCE_URL: jdbc:postgresql://db:5432/postgres
+      SPRING_DATASOURCE_USERNAME: postgres
+      SPRING_DATASOURCE_PASSWORD: 07072004mb
+    depends_on:
+      #ensure that db service starts before app service
+      - db
+    networks:
+      - app-network
+
+volumes:
+  postgres-data:
+
+networks:
+  app-network:
+    driver: bridge #Standard network type
