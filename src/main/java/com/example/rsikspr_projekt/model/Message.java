@@ -2,7 +2,7 @@ package com.example.rsikspr_projekt.model;
 
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.persistence.*;
-import lombok.Getter;
+import lombok.Getter; //jao
 import lombok.Setter;
 import lombok.ToString;
 
